@@ -1,6 +1,6 @@
 # DC Medicaid 276/277 FFS Claims – Enhanced Guide
 
-> **Reformatted for clarity** from the official [Companion Guide v1.1 (PDF)](pdfs/276-277-v1.1.pdf)  
+> **Reformatted for clarity** from the official [Companion Guide v1.1 (PDF)](276-277-v1.1.pdf)  
 > Dense tables → clean, scannable, interactive
 
 ---
