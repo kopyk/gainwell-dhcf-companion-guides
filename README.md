@@ -29,7 +29,7 @@ These **HIPAA-compliant** EDI Companion Guides are **published by Gainwell** for
 
 I reformatted dense PDF sections into clean, scannable, interactive content:
 
-[View Legible 276/277 Guide →](276-277-claim-status.md)
+[View Legible 276/277 Guide →](276-277-enhanced.md)
 
 ---
 
