@@ -37,7 +37,7 @@ I reformatted dense PDF sections into clean, scannable, interactive content:
 
 | 837I Title | 837I Intro |
 |-----------|------------|
-| ![837I Title](samples/837I-title.png) | ![837I Intro](samples/837I-intro.png) |
+| ![Title](837I-title.png) | ![Intro](837I-intro.png) |
 
 
 
