@@ -14,7 +14,7 @@ These EDI Companion Guides to the HIPAA-adopted ASC X12N v5010 TR3s were written
 | **837I Institutional Claims** | v1.3 (Jun 17, 2025) | 21 | [DC_837I-FFS-Claims-Companion-Guide-v1.3.pdf](DC_837I-FFS-Claims-Companion-Guide-v1.3.pdf) | [gainwelltechnologies.com](https://www.gainwelltechnologies.com/wp-content/uploads/2025/07/DC_837I-FFS-Claims-Companion-Guide-v1.3.pdf) |
 | **276/277 Claim Status** | v1.1 (Feb 5, 2025) | 30 | [DC_276_277FFS-FFS-Claims-Companion-Guide-v1.1.pdf](DC_276_277FFS-FFS-Claims-Companion-Guide-v1.1.pdf) | [gainwelltechnologies.com](https://www.gainwelltechnologies.com/wp-content/uploads/2025/07/DC_276_277FFS-FFS-Claims-Companion-Guide-v1.1.pdf) |
 
-Gainwell has since published a later 837I revision ([v1.5, Sep 2, 2025](https://www.gainwelltechnologies.com/wp-content/uploads/2025/11/DC_837I-FFS-Claims-Companion-Guide-v1.5.pdf)); v1.3 is the revision I worked on.
+Gainwell has since published a later 837I revision ([v1.5, Sep 2, 2025](https://www.gainwelltechnologies.com/wp-content/uploads/2025/11/DC_837I-FFS-Claims-Companion-Guide-v1.5.pdf)).
 
 ---
 

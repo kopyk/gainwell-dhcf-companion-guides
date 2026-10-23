@@ -3,7 +3,7 @@
 > **Reformatted for clarity** from the official Gainwell *Companion Guide (CG) – DC Medicaid 276/277 FFS Claims*, Version 1.1 (Feb 5, 2025):
 > [PDF in this repo](DC_276_277FFS-FFS-Claims-Companion-Guide-v1.1.pdf) · [public copy on gainwelltechnologies.com](https://www.gainwelltechnologies.com/wp-content/uploads/2025/07/DC_276_277FFS-FFS-Claims-Companion-Guide-v1.1.pdf)
 >
-> Dense tables → clean, scannable reference. Every value below is traceable to a page of the guide or to the X12 external code lists the guide points to (see [Sources](#sources)). Page numbers are the guide's printed page numbers (PDF page = printed page + 5).
+> Dense tables → clean, scannable reference. Every value below is traceable to a page of the guide or to the code lists the guide defers to via the ASC X12N TR3s (§1.1, p. 1), which X12 publishes at x12.org (see [Sources](#sources)). Page numbers are the guide's printed page numbers (PDF page = printed page + 5).
 
 ---
 
@@ -11,23 +11,25 @@
 
 Source: §7 *ISA and GS Segment Values for 276 Claim Status Inquiry* (pp. 9–10) and §8 *276 CG Transaction Table* (pp. 11–15).
 
-| Loop | Element | Value / Code | Meaning (guide wording) | Page |
-|------|---------|--------------|-------------------------|------|
+| Loop | Element | Value / Code | Guide Notes/Comments (verbatim) | Page |
+|------|---------|--------------|---------------------------------|------|
 | Header | **ISA08** Interchange Receiver ID | `DCMEDICAID` | – | 9 |
-| Header | **ISA13** Interchange Control Number | unique per file | Unique control number per file, defined by the sending trading partner | 9 |
+| Header | **ISA13** Interchange Control Number | unique per file | Unique Control Number per file defined by sending Trading Partner | 9 |
 | Header | **GS03** Application Receiver's Code | `DCMEDICAID` | – | 9 |
-| Header | **GS08** Version / Release Code | `005010X212` | 276/277 TR3 version | 9 |
+| Header | **GS08** Version / Release Code | `005010X212` | – | 9 |
 | Header | **ST01** Transaction Set Identifier Code | `276` | Health Care Claim Status Request | 11 |
 | Header | **ST03** TR3 Version Name | `005010X212` | – | 11 |
 | Header | **BHT02** Transaction Set Purpose Code | `13` | Request | 11 |
-| 2100A | **NM108 / NM109** Payer | `PI` / `DCMEDICAID` | Payer Identification / Payer ID | 12 |
+| 2100A | **NM108 / NM109** Payer | `PI` / `DCMEDICAID` | Payer Identification / DCMEDICAID | 12 |
 | 2100B | **NM108 / NM109** Information Receiver | `46` / Trading Partner ID | Electronic Transmitter Identification Number (ETIN) / DC Medicaid Trading Partner ID | 12 |
-| 2100C | **NM108** Provider ID qualifier | `XX` or `SV` | NPI, or DC Medicaid Provider ID | 13 |
+| 2100C | **NM108** Provider ID qualifier | `XX` or `SV` | XX – NPI; SV – DC Medicaid Provider ID | 13 |
 | 2100D | **NM108 / NM109** Subscriber | `MI` / Member ID | Member Identification Number / DC Medicaid Member ID | 14 |
-| 2200D | **TRN02** Current Transaction Trace Number | submitter-assigned | Submitter Trace Number – echoed back on the 277 | 14 |
-| 2200D | **REF01 / REF02** Payer Claim Control Number | `1K` / ICN | Payor's Claim Number – inquiry by DC Medicaid ICN | 14–15 |
-| 2200D | **AMT01** Amount Qualifier Code | `T3` | Total Submitted Charges (inquiry by member, dates of service and billed amount) | 15 |
+| 2200D | **TRN02** Current Transaction Trace Number | submitter-assigned | Submitter Trace Number – This number is echoed back on the 277. | 14 |
+| 2200D | **REF01 / REF02** Payer Claim Control Number | `1K` / ICN | Payor's Claim Number / DC Medicaid ICN | 14–15 |
+| 2200D | **AMT01** Amount Qualifier Code | `T3` | Total Submitted Charges (AMT segment note: Inquiry by Member, Dates of Service and Billed Amount) | 15 |
 | 2200D | **DTP01 / DTP02** Claim Service Date | `472` / `RD8` | Service / Date Range | 15 |
+
+The Notes/Comments column is copied from the guide's Notes/Comments column. Where a row covers two elements, the two cells are separated by " / "; "–" means the guide's cell is blank; a code prefix the guide repeats in that column (e.g. "13 – Request") appears once, in the Value / Code column.
 
 **Payer rules worth knowing** (§5 *Payer Business Rules and Limitations*, p. 7)
 
@@ -54,7 +56,7 @@ Source: §6 *Acknowledgements and Reports* (p. 8) and Appendix A.5–A.8 (p. 23)
 
 ## 3. 277 Response – claim status (STC segment)
 
-Source: §9 *277 CG Transaction Table*, loop 2200D STC (pp. 19–21). The guide defines the **structure** of the status composite; the **code values** come from the X12 external code lists the guide defers to (§1.1, p. 1).
+Source: §9 *277 CG Transaction Table*, loop 2200D STC (pp. 19–21). The guide defines the **structure** of the status composite; the **code values** come from the code lists the guide defers to via the TR3 (§1.1, p. 1: "Refer to the ASC X12N Implementation Guides or 5010 Technical Report Type 3 (TR3s) for information not supplied in this document, such as code lists"), which X12 publishes at x12.org.
 
 ### 3.1 STC layout as defined in the guide
 
@@ -74,25 +76,25 @@ STC03 does not appear in the guide's STC table and is not shown here.
 
 ### 3.2 Claim Status Category Codes (STC01-01)
 
-Source: X12 *Claim Status Category Codes* external code list – <https://x12.org/codes/claim-status-category-codes> (accessed 2026-10-23); definitions quoted from that list. The DC guide does not state which of these DC Medicaid returns. The full list (including the `R*`, `DR*`, `E*` families) is on x12.org.
+Source: X12 *Claim Status Category Codes* external code list – <https://x12.org/codes/claim-status-category-codes> (accessed 2026-10-23); definitions quoted from that list (the family prefix, e.g. "Acknowledgement/", is carried by the section column), and the *X12 list section* column is the heading the list files each code under. The DC guide does not state which of these DC Medicaid returns. The full list (including the `R*`, `DR*`, `E*` families) is on x12.org.
 
-| Code | Family | X12 definition |
-|------|--------|----------------|
-| **A0** | Acknowledgement | Forwarded – The claim/encounter has been forwarded to another entity. |
-| **A1** | Acknowledgement | Receipt – The claim/encounter has been received. This does not mean that the claim has been accepted for adjudication. |
-| **A2** | Acknowledgement | Acceptance into adjudication system – The claim/encounter has been accepted into the adjudication system. |
-| **A3** | Acknowledgement | Returned as unprocessable claim – The claim/encounter has been rejected and has not been entered into the adjudication system. |
-| **A4** | Acknowledgement | Not Found – The claim/encounter can not be found in the adjudication system. |
-| **A6** | Acknowledgement | Rejected for Missing Information – The claim/encounter is missing the information specified in the Status details and has been rejected. |
-| **A7** | Acknowledgement | Rejected for Invalid Information – The claim/encounter has invalid information as specified in the Status details and has been rejected. |
+| Code | X12 list section | X12 definition |
+|------|------------------|----------------|
+| **A0** | Acknowledgements | Forwarded – The claim/encounter has been forwarded to another entity. |
+| **A1** | Acknowledgements | Receipt – The claim/encounter has been received. This does not mean that the claim has been accepted for adjudication. |
+| **A2** | Acknowledgements | Acceptance into adjudication system – The claim/encounter has been accepted into the adjudication system. |
+| **A3** | Acknowledgements | Returned as unprocessable claim – The claim/encounter has been rejected and has not been entered into the adjudication system. |
+| **A4** | Acknowledgements | Not Found – The claim/encounter can not be found in the adjudication system. |
+| **A6** | Acknowledgements | Rejected for Missing Information – The claim/encounter is missing the information specified in the Status details and has been rejected. |
+| **A7** | Acknowledgements | Rejected for Invalid Information – The claim/encounter has invalid information as specified in the Status details and has been rejected. |
 | **P1** | Pending | In Process – The claim or encounter is in the adjudication system. |
 | **P2** | Pending | Payer Review – The claim/encounter is suspended and is pending review (e.g. medical review, repricing, Third Party Administrator processing). |
 | **F0** | Finalized | The claim/encounter has completed the adjudication cycle and no more action will be taken. |
 | **F1** | Finalized | Payment – The claim/line has been paid. |
 | **F2** | Finalized | Denial – The claim/line has been denied. |
 | **F4** | Finalized | Adjudication Complete – No payment forthcoming – The claim/encounter has been adjudicated and no further payment is forthcoming. |
-| **E0** | Response not possible | Error on submitted request data. |
-| **D0** | Data search | Data Search Unsuccessful – The payer is unable to return status on the requested claim(s) based on the submitted search criteria. |
+| **E0** | Error | Response not possible - error on submitted request data |
+| **D0** | Searches | Data Search Unsuccessful – The payer is unable to return status on the requested claim(s) based on the submitted search criteria. |
 
 ---
 
