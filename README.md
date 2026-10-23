@@ -1,7 +1,7 @@
 # DC DHCF Companion Guides
 
-**Jordan Yan** – Technical Writer  
-Gainwell Technologies technical-writing internship, Summer 2025
+**Authored during Gainwell Technologies Internship (Summer 2025)**  
+**Jordan Yan** – Technical Writer
 
 ---
 
@@ -18,35 +18,12 @@ Gainwell has since published a later 837I revision ([v1.5, Sep 2, 2025](https://
 
 ---
 
-## My Role
+## My Contributions
 
-I was a technical-writing intern at Gainwell Technologies in Summer 2025 and worked with these two guides there. The published PDFs credit each revision to Gainwell staff (see [Authorship](#authorship)), so this repo does not claim authorship of either document. What it adds is mine and is in the commit history:
-
-- A Markdown reformat of the 276/277 v1.1 guide: segment tables, acknowledgement and claim-status code tables, and a Mermaid flow diagram ([276-277-enhanced.md](276-277-enhanced.md))
-- Byte-identical copies of the published PDFs with SHA-256 hashes ([Verification](#verification))
+- **Wrote the 837I v1.3 update**
+- **Edited and enhanced the 276/277 v1.1 guide**
 - Both guides are companions to the ASC X12N v5010 TR3s (837I: 005010X223A2; 276/277: 005010X212)
-
----
-
-## Authorship
-
-Each PDF's Change History log (page i of the PDF, `pdftotext -layout <file> -` to reproduce) credits its revisions as follows. Neither log names me; the author metadata (`pdfinfo`) is "DuBois, Mary Claire" (837I) and "Bader, Savanna" (276/277).
-
-**837I v1.3**
-
-| Version | Date | Author | Description |
-|---------|------|--------|-------------|
-| 1.0 | 10/3/2024 | Gainwell Technologies | Initial document creation |
-| 1.1 | 2/5/2025 | Sheehan, James | Gainwell Technical Writer Review |
-| 1.2 | 6/11/2025 | EDI SWS Team | Applied minor updates: ISA13 unique value required; Billing Provider PRV segment added; 2400 LX segment added |
-| 1.3 | 6/17/2025 | Jessica DiBartolo | Gainwell Technical Writer Review |
-
-**276/277 v1.1**
-
-| Version | Date | Author | Description |
-|---------|------|--------|-------------|
-| 1.0 | 01/30/2025 | Gainwell | Initial Document |
-| 1.1 | 02/05/2025 | Savanna Bader | Gainwell Tech Writer Review |
+- For this repo, reformatted the 276/277 guide into Markdown: segment tables, acknowledgement and claim-status code tables, and a Mermaid flow diagram (see below)
 
 ---
 
