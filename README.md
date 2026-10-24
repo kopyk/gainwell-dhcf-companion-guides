@@ -1,7 +1,6 @@
 # DC DHCF Companion Guides
 
-**Authored during Gainwell Technologies Internship (Summer 2025)**  
-**Jordan Yan** – Technical Writer
+**Jordan Yan – Technical Writer, Gainwell Technologies (Feb 2025 – Feb 2026)**
 
 ---
 
